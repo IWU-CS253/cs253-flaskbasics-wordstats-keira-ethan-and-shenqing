@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+
 WORD_COUNTS =[]
 @app.route('/')
 
@@ -26,5 +27,14 @@ def count():
 
     average = character/count
 
-    return render_template("count.html", count="count", character="character", average="average")
+    return render_template("count.html", count=count, character=character, average=average)
+
+
+@app.route('/')
+def index():  # put application's code here
+    return render_template("index.html")
+
+
+if __name__ == '__main__':
+    app.run()
 
