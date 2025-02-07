@@ -12,19 +12,21 @@ def index():
 @app.route('/count', methods=['POST'])
 
 def count():
-    string = request.form.get("string")
-    words = string.split(' ')
-    for word in words:
+    text = request.form.get("string")
+    print(text)
+    words_ = text.split(' ')
+    for word in words_:
         word = word.strip('.').strip('!').strip('?')
         WORD_COUNTS.append(word)
 
-    count = 0
+    word = 0
     character = 0
-    for word in WORD_COUNTS:
-        count += 1
-        for char in word:
+    for words in WORD_COUNTS:
+        word += 1
+        for char in words:
             character += 1
 
-    average = character/count
+    average = character/word
 
-    return render_template("count.html", count=count, character=character, average=average)
+    return render_template("count.html", word=word, character=character, average=average)
+
