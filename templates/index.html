@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action="/count" method="post">
+        <input name="string" type="text" placeholder="type a sentence!" required>
+        <button type="submit">get word count</button>
+    </form>
+{% endblock %}
