@@ -30,3 +30,4 @@ def count():
 
     return render_template("count.html", word=word, character=character, average=average)
 
+
