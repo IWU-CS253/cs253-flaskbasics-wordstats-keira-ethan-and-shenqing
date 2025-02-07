@@ -28,3 +28,5 @@ def count():
 
     return render_template("count.html", count="count", character="character", average="average")
 
+if __name__ == '__main__':
+    app.run()
